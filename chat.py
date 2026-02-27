@@ -1,13 +1,6 @@
-# Simple AI Chat – no extra libraries needed except openai
-# Comments in English
-
 import os
 from openai import OpenAI
 
-# ====== SETTINGS ======
-# Option 1: Use environment variable (recommended for GitHub)
-# Mac/Linux: export OPENAI_API_KEY="sk-XXXX"
-# Windows: setx OPENAI_API_KEY "sk-XXXX"
 API_KEY = os.getenv("OPENAI_API_KEY")  # safer
 
 # Option 2: Hardcode your key (only for personal testing)
@@ -21,10 +14,10 @@ client = OpenAI(api_key=API_KEY)
 
 print("AI chat is ready! Type 'exit' to quit.")
 
-# ====== Chat history ======
+
 chat_history = []
 
-# ====== Chat loop ======
+# chat loop
 while True:
     user_input = input("You: ")
     if user_input.lower() == "exit":
@@ -48,8 +41,7 @@ while True:
 
     except Exception as e:
         print(f"Error connecting to AI: {e}")
-
-# ====== Optional: save chat history to a file ======
+        
 try:
     with open("chat_history.txt", "w", encoding="utf-8") as f:
         for msg in chat_history:

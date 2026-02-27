@@ -62,12 +62,11 @@ send_button = tk.Button(input_frame,
                         command=send_message,
                         font=("Arial", 14, "bold"),
                         bg="#4caf50",
-                        fg="white",
-                        bd=0,
-                        relief="ridge",
-                        padx=25,
-                        pady=10,
-                        highlightthickness=0)
+                        fg="blue",
+                        bd=2,
+                        relief="raised",
+                        padx=10,
+                        pady=10)
 send_button.pack(side=tk.RIGHT, pady=5)
 
 # Bind Enter key
